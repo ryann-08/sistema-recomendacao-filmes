@@ -18,20 +18,56 @@ function obterPerfilAtual(){
     return perfilUsuario;
 }
 
-//aqui vamos supor que a pessoa, assiste um filme de comedia (indice 1) aqui soma um valor (exemplo 0.1) na posicao 1 do vetor
-//perfilUsuario e registra o quanto mudou em ultimoAjuste
-//detalhe o vetor tem quatro posicoes de 0 a 3, esse indiceGenero é simplesmente um numero de 0 a 3, que a interface vai passar a 
-//indicar qual foi o genero do filme assistido
+
+
+//a ideia dessa funcao é simples, quando o usuario assiste a um filme, precisa atualizar o perfil dele
+//o genero que ele assistiu ganha nota, e todos os outros perdem um pouco
 function registrarFilmeAssistido(indiceGenero){
-    //zerar o ultimoAjuste para calcular o novo
+
+    //aqui duas regras constantes, assistiu ganha (+0.1) outros generos perdem por nao er sido assistidos
+    const INCREMENTO = 0.2;
+    const DECREMENTO = 0.03;
+
+    //aqui estou zerando a lista, para conseguir registrar quanto cada um dos generos vai mudar
     ultimoAjuste = [0, 0, 0, 0];
 
-    //registrar que esse genero especifico subiu +0.1
-    ultimoAjuste[indiceGenero] = 0.1;
+    //essa linha faz o codigo olhar para cada um dos genero do usuario
+    for(let i = 0; i < perfilUsuario.length; i++){
 
-    //aplicar o aumento no perfil do usuario
-    perfilUsuario[indiceGenero] += 0.1;
+        //essa linha aqui abaixo é o teste se o genero é assistido ou nao
+        if(i === indiceGenero){
+
+            //aqui se for o genero assistido, soma 0.1, na nota atual se passar de 5.0 o match.min trava
+            const novaNota = Math.min(5, perfilUsuario[i] + INCREMENTO);
+
+            //arredonda a nota para 2 casas decimais
+            const notaArredondada = Number(novaNota.toFixed(2));
+
+            //calcula a variacao exata ja com o valor arredondado
+            ultimoAjuste[i] = Number((notaArredondada - perfilUsuario[i]).toFixed(2));
+
+            //aqui grava a nova nota incrementada no perfil do usuarios
+            perfilUsuario[i] = notaArredondada;
+        }
+        //se nao for o genbero assistido
+        else{
+
+            //subtrai 0.03 da nota atual se tentar ficar menor que 0.0 o math.max trava no minimo que é 0.0
+            const novaNota = Math.max(0, perfilUsuario[i] - DECREMENTO);
+
+            //arredonda a nota para 2 casas decimais para evitar o dizimas no js
+            const notaArredondada = Number(novaNota.toFixed(2));
+
+            //calcula a variação exata ja com o valor arredondado
+            ultimoAjuste[i] = Number((notaArredondada - perfilUsuario[i]).toFixed(2));
+
+            //guarda a nova nota reduzida do perfil do usuario
+            perfilUsuario[i] =notaArredondada;
+        }
+    }
 }
+
+
 
 //essa funcao so devolve o vetor de ajuste para a interface saber o quanto mudou
 function obterUltimoAjuste(){
