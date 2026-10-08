@@ -173,14 +173,3 @@ export {
     buscarFilmesPorGenero,
     recomendarFilmeDiversificado
 };
-
-    console.log("Quantidade de filmes:", catalogo.length);
-
-    console.log(
-    "Romance:",
-    buscarFilmesPorGenero("Romances")
-);
-
-    console.log(
-    "Anti-bolha:",
-    recomendarFilmeDiversificado([0.6, 0.3, 0.9, 0.2]));
