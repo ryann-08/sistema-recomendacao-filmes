@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Define o padrão de caracteres para garantir que acentos e cedilhas funcionem -->
     <meta charset="UTF-8">
-    <!-- Faz com que a tela se adapte bem tanto no computador quanto no telemóvel -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título que aparece na aba do navegador -->
     <title>Muita MalaFlix - Recomendações</title>
-    <!-- Conecta esta página HTML com o seu ficheiro de estilo CSS -->
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
 
-   <!-- MENU DE NAVEGAÇÃO SUPERIOR (Navbar) -->
+    <!-- MENU DE NAVEGAÇÃO SUPERIOR (Navbar) -->
     <header class="navbar">
         <div class="nav-left">
             <span class="nav-logo-text">MALAFLIX</span>
@@ -24,28 +20,24 @@
             </nav>
         </div>
         <div class="nav-right">
-            <div class="user-avatar">MM</div>
+            <div class="user-avatar">MD</div>
         </div>
     </header>
 
-    <!-- LOGO "MUITA MALAFLIX" (Modelo M com fita de cinema - Fundo 100% transparente) -->
+    <!-- LOGO "MUITA MALAFLIX" -->
     <div class="logo-wrapper">
         <div class="logo-vertical">
-            <!-- Desenho Vetorial (SVG) do "M" com fita de cinema e botão Play -->
             <svg class="m-icon logo-img" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <!-- Degradê roxo claro para a frente do M -->
                     <linearGradient id="roxoLuz" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stop-color="#d55cff" />
                         <stop offset="50%" stop-color="#9d2ae8" />
                         <stop offset="100%" stop-color="#6200ea" />
                     </linearGradient>
-                    <!-- Degradê roxo mais escuro para dar efeito de dobra 3D na direita -->
                     <linearGradient id="roxoSombra" x1="0%" y1="0%" x2="0%" y2="100%">
                         <stop offset="0%" stop-color="#7c1cd6" />
                         <stop offset="100%" stop-color="#430099" />
                     </linearGradient>
-                    <!-- Máscara que recorta os 5 furinhos da fita de cinema na perna esquerda do M -->
                     <mask id="furosFita">
                         <rect x="0" y="0" width="140" height="120" fill="white" />
                         <rect x="19" y="22" width="10" height="11" rx="2" fill="black" />
@@ -55,30 +47,16 @@
                         <rect x="19" y="94" width="10" height="11" rx="2" fill="black" />
                     </mask>
                 </defs>
-
-                <!-- Perna direita do M (efeito sombra 3D) -->
                 <rect x="96" y="10" width="30" height="102" rx="14" fill="url(#roxoSombra)" />
-
-                <!-- Dobra direita que sobe para o topo direito do M -->
                 <path d="M 65,68 L 102,15 C 108,7 126,10 126,24 L 82,82 Z" fill="#8f24e6" />
-
-                <!-- Corpo principal esquerdo do M (com os furos da fita aplicados pela máscara) -->
                 <g mask="url(#furosFita)">
-                    <!-- Perna esquerda da fita -->
                     <rect x="12" y="10" width="38" height="102" rx="10" fill="url(#roxoLuz)" />
-                    <!-- Dobra diagonal que desce da esquerda para o centro -->
                     <path d="M 38,10 L 82,66 C 85,70 82,78 75,80 L 65,82 L 26,32 Z" fill="url(#roxoLuz)" />
                 </g>
-
-                <!-- Triângulo de Play centralizado embaixo da dobra do M -->
                 <path d="M 63,76 C 63,72 67,70 70,72 L 87,83 C 90,85 90,89 87,91 L 70,102 C 67,104 63,102 63,98 Z" fill="url(#roxoLuz)" />
             </svg>
-
-            <!-- Textos abaixo do M -->
             <div class="linha-muita">MUITA</div>
             <div class="linha-malaflix">MALAFLIX</div>
-            
-            <!-- Slogan com as linhas laterais: — FILMES • SÉRIES • VOCÊ — -->
             <div class="linha-slogan">
                 <span class="traco"></span>
                 <span>FILMES &bull; SÉRIES &bull; VOCÊ</span>
@@ -87,72 +65,72 @@
         </div>
     </div>
 
-    <!-- CAIXA DOS RECOMENDADOS: Espaço reservado para os 5 filmes sugeridos pelo sistema -->
+    <!-- CAIXA DOS RECOMENDADOS: Corrigido para 114x171 -->
     <div class="categoria"> 
         <h2>Filmes recomendados</h2>
-        <div class="movie-roll"> 
-            <img src="https://via.placeholder.com/180x270" alt="cartaz do filme" class="movie-card"> 
-            <img src="https://via.placeholder.com/180x270" alt="cartaz do filme" class="movie-card">
-            <img src="https://via.placeholder.com/180x270" alt="cartaz do filme" class="movie-card">
-            <img src="https://via.placeholder.com/180x270" alt="cartaz do filme" class="movie-card">
-            <img src="https://via.placeholder.com/180x270" alt="cartaz do filme" class="movie-card">
+        <div class="movie-roll" id="recomendados-roll"> 
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card"> 
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
         </div>
     </div>
 
     <h2>Filmes disponíveis</h2>
 
-    <!-- CATEGORIA: TERROR -->
+    <!-- 1. CATEGORIA: TERROR -->
     <div class="categoria">
-        <h3> Terror </h3>
+        <h3>Terror</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Terror/it.jpg" alt="cartaz do filme" class="movie-card" data-titulo="It A Coisa">
-            <img src="capas de filmes/Terror/massacre.jpg" alt="cartaz do filme" class="movie-card" data-titulo="O Massacre da Serra Elétrica">
-            <img src="capas de filmes/Terror/hellraiser.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Hellraiser">
-            <img src="capas de filmes/Terror/halloween.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Halloween">
-            <img src="capas de filmes/Terror/scream.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Pânico">
+            <img src="capas de filmes/Terror/exorcista.jpg" alt="O Exorcista" class="movie-card" data-titulo="O Exorcista" data-vetor="[5, 0, 0, 0]">
+            <img src="capas de filmes/Terror/it.jpg" alt="It: A Coisa" class="movie-card" data-titulo="It: A Coisa" data-vetor="[5, 1, 0, 2]">
+            <img src="capas de filmes/Terror/invocacao.jpg" alt="Invocação do Mal" class="movie-card" data-titulo="Invocação do Mal" data-vetor="[5, 0, 1, 1]">
+            <img src="capas de filmes/Terror/iluminado.jpg" alt="O Iluminado" class="movie-card" data-titulo="O Iluminado" data-vetor="[5, 0, 1, 0]">
+            <img src="capas de filmes/Terror/panico.jpg" alt="Pânico" class="movie-card" data-titulo="Pânico" data-vetor="[5, 2, 1, 2]">
         </div>
     </div>
 
-    <!-- CATEGORIA: AÇÃO -->
+    <!-- 2. CATEGORIA: COMÉDIA -->
     <div class="categoria">
-      <h3> Ação </h3>
+        <h3>Comédia</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Ação/duro.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Duro de Matar">
-            <img src="capas de filmes/Ação/exterminador.jpg" alt="cartaz do filme" class="movie-card" data-titulo="O Exterminador do Futuro">
-            <img src="capas de filmes/Ação/007.jpg" alt="cartaz do filme" class="movie-card" data-titulo="007">
-            <img src="capas de filmes/Ação/rambo.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Rambo">
-            <img src="capas de filmes/Ação/robo.jpg" alt="cartaz do filme" class="movie-card" data-titulo="RoboCop">
+            <img src="capas de filmes/Comedia/branquelas.jpg" alt="As Branquelas" class="movie-card" data-titulo="As Branquelas" data-vetor="[0, 5, 0, 1]">
+            <img src="capas de filmes/Comedia/sebeber.jpg" alt="Se Beber, Não Case!" class="movie-card" data-titulo="Se Beber, Não Case!" data-vetor="[0, 5, 1, 1]">
+            <img src="capas de filmes/Comedia/todomundo.jpg" alt="Todo Mundo em Pânico" class="movie-card" data-titulo="Todo Mundo em Pânico" data-vetor="[3, 5, 0, 1]">
+            <img src="capas de filmes/Comedia/debieloide.jpg" alt="Debi & Lóide" class="movie-card" data-titulo="Debi & Lóide" data-vetor="[0, 5, 0, 1]">
+            <img src="capas de filmes/Comedia/click.jpg" alt="Click" class="movie-card" data-titulo="Click" data-vetor="[0, 4, 3, 1]">
         </div>
     </div>    
 
-    <!-- CATEGORIA: COMÉDIA -->
+    <!-- 3. CATEGORIA: ROMANCE -->
     <div class="categoria">
-      <h3> Comedia </h3>
+        <h3>Romance</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Comedia/as branquelas.jpg" alt="cartaz do filme" class="movie-card" data-titulo="As Branquelas">
-            <img src="capas de filmes/Comedia/auto.jpg" alt="cartaz do filme" class="movie-card" data-titulo="O Auto da Compadecida">
-            <img src="capas de filmes/Comedia/lisbela.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Lisbela e o Prisioneiro">
-            <img src="capas de filmes/Comedia/norbit.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Norbit">
-            <img src="capas de filmes/Comedia/todo mundo.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Todo Mundo em Pânico">
+            <img src="capas de filmes/Romance/titanic.jpg" alt="Titanic" class="movie-card" data-titulo="Titanic" data-vetor="[0, 0, 5, 2]">
+            <img src="capas de filmes/Romance/diario.jpg" alt="Diário de uma Paixão" class="movie-card" data-titulo="Diário de uma Paixão" data-vetor="[0, 0, 5, 0]">
+            <img src="capas de filmes/Romance/comoeuera.jpg" alt="Como Eu Era Antes de Você" class="movie-card" data-titulo="Como Eu Era Antes de Você" data-vetor="[0, 1, 5, 0]">
+            <img src="capas de filmes/Romance/10coisas.jpg" alt="10 Coisas que Eu Odeio em Você" class="movie-card" data-titulo="10 Coisas que Eu Odeio em Você" data-vetor="[0, 3, 5, 0]">
+            <img src="capas de filmes/Romance/simplesmente.jpg" alt="Simplesmente Acontece" class="movie-card" data-titulo="Simplesmente Acontece" data-vetor="[0, 2, 5, 0]">
         </div>
-    </div>    
-
-    <!-- CATEGORIA: ROMANCE -->
-    <div class="categoria">
-      <h3> Romance </h3>
-        <div class="movie-roll">
-            <img src="capas de filmes/Romance/diario.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Diário de uma Paixão">
-            <img src="capas de filmes/Romance/ghost.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Ghost">
-            <img src="capas de filmes/Romance/meu primeiro amor.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Meu Primeiro Amor">
-            <img src="capas de filmes/Romance/titanic.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Titanic">
-            <img src="capas de filmes/Romance/uma linda mulher.jpg" alt="cartaz do filme" class="movie-card" data-titulo="Uma Linda Mulher">
-       </div>
     </div>
 
-    <!-- CAIXA DO PAINEL (HUD): Fica invisível até que o código do Filipe injete informações aqui -->
+    <!-- 4. CATEGORIA: AÇÃO -->
+    <div class="categoria">
+        <h3>Ação</h3>
+        <div class="movie-roll">
+            <img src="capas de filmes/Ação/vingadores.jpg" alt="Vingadores: Ultimato" class="movie-card" data-titulo="Vingadores: Ultimato" data-vetor="[0, 1, 1, 5]">
+            <img src="capas de filmes/Ação/johnwick.jpg" alt="John Wick" class="movie-card" data-titulo="John Wick" data-vetor="[0, 0, 0, 5]">
+            <img src="capas de filmes/Ação/missao.jpg" alt="Missão Impossível: Efeito Fallout" class="movie-card" data-titulo="Missão Impossível: Efeito Fallout" data-vetor="[0, 0, 0, 5]">
+            <img src="capas de filmes/Ação/aranha.jpg" alt="Homem-Aranha: Sem Volta para Casa" class="movie-card" data-titulo="Homem-Aranha: Sem Volta para Casa" data-vetor="[0, 1, 2, 5]">
+            <img src="capas de filmes/Ação/madmax.jpg" alt="Mad Max: Estrada da Fúria" class="movie-card" data-titulo="Mad Max: Estrada da Fúria" data-vetor="[0, 0, 0, 5]">
+        </div>
+    </div>    
+
+    <!-- CAIXA DO PAINEL (HUD) -->
     <div id="hud-panel"></div>
 
-<!-- RODAPÉ DA PÁGINA (Footer) -->
+    <!-- RODAPÉ DA PÁGINA (Footer) -->
     <footer class="site-footer">
         <div class="footer-content">
             <p>&copy; 2026 Muita MalaFlix. Todos os direitos reservados.</p>
@@ -163,5 +141,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- DETECTOR AUTOMÁTICO DE EXTENSÕES (.jpeg, .webp, .png, .jpg.jpg) -->
+    <script>
+        const extensoes = ['.jpeg', '.webp', '.png', '.jpg.jpg', '.jpg.jpeg', '.jpg.webp', '.JPG', '.JPEG'];
+        document.querySelectorAll('.movie-card').forEach(img => {
+            let tentativa = 0;
+            const caminhoBase = img.getAttribute('src').replace(/\.jpg$/i, '');
+            img.addEventListener('error', function() {
+                if (tentativa < extensoes.length && !this.src.includes('placeholder')) {
+                    this.src = caminhoBase + extensoes[tentativa];
+                    tentativa++;
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
