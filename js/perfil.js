@@ -7,8 +7,11 @@ let ultimoAjuste =[0, 0, 0, 0];
 //criar a funcao, que recebe as notas que vem da interface
 //funcao criada com parametro chamado notas, pega aquele [0, 0, 0, 0] e subistitui pelas notas da tela 1
 //detalhe nao retorna nada, so salva na variavel perfilUsuario, e quem retorna o valor é obterPerfilAtual
+//[...notas] faz uma COPIA do array. Sem isso, perfilUsuario e o array da tela
+//seriam o mesmo objeto, e mudar um mudaria o outro sem eu perceber.
+//os 3 pontos espalham os valores e os colchetes montam um array novo com eles
 function definirPerfilInicial(notas){
-    perfilUsuario = notas;
+    perfilUsuario = [...notas];
 }
 
 //aqui onde fica o perfil do usuario sempre atualizado
@@ -75,5 +78,5 @@ function obterUltimoAjuste(){
 }
 
 //para que os outros integrantes consigam chamar essa funcao preciso exportar aqui no final do arquivo
-module.exports = { definirPerfilInicial, obterPerfilAtual, registrarFilmeAssistido, obterUltimoAjuste};
+export { definirPerfilInicial, obterPerfilAtual, registrarFilmeAssistido, obterUltimoAjuste};
 
