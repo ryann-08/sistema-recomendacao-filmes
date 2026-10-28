@@ -1,0 +1,155 @@
+/* Fundo mais vivo com gradiente escuro e a nova fonte */
+body, html {
+  margin: 0;
+  padding: 0;
+  /* Cria um brilho roxo escuro no topo que vai escurecendo até o preto nas bordas */
+  background: radial-gradient(circle at top, #1a0933 0%, #000000 80%);
+  color: white;
+  font-family: 'Poppins', sans-serif; /* Aplicando a nova fonte */
+  min-height: 100vh;
+}
+
+/* Centraliza o conteúdo na tela */
+.tela-inteira {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo da Logo */
+.logo-container {
+  margin-bottom: 20px;
+}
+.logo {
+  max-width: 250px; /* Ajuste o tamanho da logo aqui */
+}
+
+/* Container principal mais enxuto */
+.container-categorias {
+  width: 100%;
+  max-width: 500px; /* Deixa as bordas menores (mais apertado) */
+}
+
+/* Textos centralizados */
+.cabecalho-categorias {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Aumentando o espaço entre as categorias */
+.linha-genero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  margin-bottom: 25px; /* AQUI: Aumentamos o espaço de 12px para 25px */
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra para dar profundidade */
+}
+
+.botoes-nota {
+  display: flex;
+  gap: 8px;
+}
+
+/* Botões de nota redondos */
+.btn-nota {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #888;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Efeito ROXO CLARO ao passar o mouse */
+.btn-nota:hover {
+  border-color: #a64dff; 
+  color: #a64dff;
+}
+
+/* Efeito ROXO FORTE quando o botão for clicado/selecionado */
+.btn-nota.selecionado {
+  background-color: #7b2cbf; 
+  color: white;
+  border-color: #7b2cbf;
+  font-weight: bold;
+}
+
+/* Botão de Continuar roxo */
+.rodape-categorias {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn-continuar {
+  background-color: #7b2cbf; /* Roxo escuro */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-continuar:hover {
+  background-color: #a64dff; /* Roxo mais claro ao passar o mouse */
+}
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.logo-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-vertical:hover {
+    transform: scale(1.03); /* Leve zoom ao passar o mouse no logo */
+}
+
+/* Tamanho e brilho neon do ícone "M" */
+.m-icon {
+    width: 75px; /* Tamanho ajustado para não ficar gigante */
+    max-width: 75px;
+    height: auto;
+    filter: drop-shadow(0 6px 16px rgba(138, 43, 226, 0.5));
+    margin-bottom: 6px;
+}
+
+/* Palavra "MUITA" em branco com letras espaçadas */
+.linha-muita {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 8px;
+    margin-left: 8px;
+    line-height: 1.1;
+}
+
+/* Palavra "MALAFLIX" em roxo vibrante */
+.linha-malaflix {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-left: 5px;
+    line-height: 1.15;
+    background: linear-gradient(90deg, #b84fce, #8a2be2, #9d2ae8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(138, 43, 226, 0.45));
+}
