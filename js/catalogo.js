@@ -55,6 +55,9 @@ function normalizarVetor(vetor) {
 //  Exemplo: √35 ≈ 5.916
     const norma = Math.sqrt(soma);
 
+    if(norma === 0)
+        return vetor;
+    
 //  Divide cada componente do vetor pela sua norma,
 //  criando um novo vetor cuja norma será igual a 1.
 //  Exemplo: [3, 5, 0, 1] / 5.916
@@ -170,6 +173,7 @@ function recomendarFilmeDiversificado(vetorUsuario) {
 
 export {
     catalogo,
+    normalizarVetor,
     buscarFilmesPorGenero,
     recomendarFilmeDiversificado
 };
