@@ -1,3 +1,5 @@
+import { recomendarFilmeDiversificado, normalizarVetor } from '.catalogo.js';
+
 // constante com os nomes dos generos para formatar o perfil do usuario
 const NOMES_GENEROS = ["Terror", "Comédia", "Romance", "Ação"];
 
@@ -110,8 +112,10 @@ function inserirDiversificado(top5, filmeDiversificado, perfil) {
 function atualizarRecomendacoes(perfil, catalogo, ultimoAjuste, permitirDiversificado) {
 
     // 1. Calcula a afinidade de todos os filmes e pega os 5 melhores
+    const perfilNorm = normalizarVetor(perfil);
     const afinidades = calcularAfinidades(perfil, catalogo);
     const top5 = obterTop5(afinidades);
+
 
     // 2. Começa com o top 5 normal; só troca se a diversificação for permitida
     let recomendacoes = top5;
@@ -131,3 +135,4 @@ function atualizarRecomendacoes(perfil, catalogo, ultimoAjuste, permitirDiversif
     };
 }
 
+export { atualizarRecomendacoes };
