@@ -1,0 +1,78 @@
+*{
+margin:0;
+padding:0;
+}
+body{
+    background-color: black;
+    box-shadow:inset 50px 0 100px rgba(255,255,255,0.2); 
+    color:white;
+    font-family:arial, sans-serif;
+    padding: 2rem;
+    text-align: center;
+    }
+    h1{
+        color:whitesmoke;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid blueviolet;
+    font-size:2rem;
+    margin-bottom:1rem;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+    }
+    #recommendations-container{background-color: rgba(0,0,0,0.5);
+    }
+    h2{
+        color:silver;
+        margin-top:2rem;
+        border-top: 1px solid silver;
+        padding-top: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }    
+    #hudpanel{background-color: rgba(0,0,0,0.5);
+    border: 1px solid white;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    }
+    .categoria{
+        margin-bottom: 40px;
+    }    
+    .movie-roll{
+        display: flex; 
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 0;
+        justify-content: center;
+        .movie-roll::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    .movie-card{
+        background-color: #242424;
+        width: 120px;
+        height: 180px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      
+    }
+    .movie-card img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    .movie-card:hover{
+        transform: scale(1.15);
+        background-color: #444;
+
+        
+    }
