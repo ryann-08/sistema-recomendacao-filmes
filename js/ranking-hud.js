@@ -1,4 +1,4 @@
-import { recomendarFilmeDiversificado, normalizarVetor } from '.catalogo.js';
+import { recomendarFilmeDiversificado, normalizarVetor } from './catalogo.js';
 
 // constante com os nomes dos generos para formatar o perfil do usuario
 const NOMES_GENEROS = ["Terror", "Comédia", "Romance", "Ação"];
