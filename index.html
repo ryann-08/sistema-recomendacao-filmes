@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUITA MALAFLIX</title>
+    <link rel="stylesheet" href="css/interface-tela1.css">
+</head>
+<body>
+  <!-- Container principal para centralizar tudo -->
+<div class="tela-inteira">
+  
+ 
+<div class="logo-wrapper">
+  <div class="logo-vertical">
+    
+    <svg class="m-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Gradientes Roxos -->
+        <linearGradient id="gradEsq" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b84fce" />
+          <stop offset="100%" stop-color="#5a189a" />
+        </linearGradient>
+        <linearGradient id="gradDir" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#9d2ae8" />
+          <stop offset="100%" stop-color="#7b2cbf" />
+        </linearGradient>
+        
+        <!-- Máscara dos furinhos da fita de cinema -->
+        <mask id="furosFita">
+          <rect x="0" y="0" width="100" height="100" fill="white" />
+          <rect x="18" y="18" width="6" height="6" rx="1" fill="black" />
+          <rect x="18" y="33" width="6" height="6" rx="1" fill="black" />
+          <rect x="18" y="48" width="6" height="6" rx="1" fill="black" />
+          <rect x="18" y="63" width="6" height="6" rx="1" fill="black" />
+          <rect x="18" y="78" width="6" height="6" rx="1" fill="black" />
+        </mask>
+      </defs>
+      
+      <!-- Perna Esquerda (Fita de Cinema) -->
+      <rect x="10" y="10" width="22" height="80" rx="3" fill="url(#gradEsq)" mask="url(#furosFita)"/>
+      
+      <!-- Perna Direita e V Central -->
+      <path d="M 32 10 
+               L 50 45 
+               L 68 10 
+               C 80 10, 90 14, 90 26 
+               L 90 74 
+               C 90 86, 80 90, 68 90 
+               L 68 35 
+               L 50 70 
+               L 32 35 
+               Z" fill="url(#gradDir)"/>
+               
+      <!-- Botão Play centralizado exatamente sob o eixo 50 (a ponta do V) -->
+      <polygon points="45,74 59,81 45,88" fill="url(#gradEsq)"/>
+    </svg>
+
+    <div class="linha-muita">MUITA</div>
+    <div class="linha-malaflix">MALAFLIX</div>
+    
+  </div>
+</div>
+
+  <div class="container-categorias">
+    
+    <!-- Título e Instruções -->
+    <div class="cabecalho-categorias">
+      <h2>Qual o seu nível de interesse em cada gênero?</h2>
+      <p>De 1 a 5, escolha o quanto você gosta de cada um.</p>
+    </div>
+
+    <!-- Lista das 4 Categorias -->
+    <div class="lista-generos">
+
+      <!-- Categoria: Ação -->
+      <div class="linha-genero">
+        <div class="nome-genero">
+          <span class="icone-genero acao">1</span> Ação
+        </div>
+        <div class="botoes-nota">
+          <button class="btn-nota" onclick="salvarNota(0, 1)">1</button>
+          <button class="btn-nota" onclick="salvarNota(0, 2)">2</button>
+          <button class="btn-nota" onclick="salvarNota(0, 3)">3</button>
+          <button class="btn-nota" onclick="salvarNota(0, 4)">4</button>
+          <button class="btn-nota" onclick="salvarNota(0, 5)">5</button>
+        </div>
+      </div>
+
+      <!-- Categoria: Comédia -->
+      <div class="linha-genero">
+        <div class="nome-genero">
+          <span class="icone-genero comedia">2</span> Comédia
+        </div>
+        <div class="botoes-nota">
+          <button class="btn-nota" onclick="salvarNota(1, 1)">1</button>
+          <button class="btn-nota" onclick="salvarNota(1, 2)">2</button>
+          <button class="btn-nota" onclick="salvarNota(1, 3)">3</button>
+          <button class="btn-nota" onclick="salvarNota(1, 4)">4</button>
+          <button class="btn-nota" onclick="salvarNota(1, 5)">5</button>
+        </div>
+      </div>
+
+      <!-- Categoria: Romance -->
+      <div class="linha-genero">
+        <div class="nome-genero">
+          <span class="icone-genero romance">3</span> Romance
+        </div>
+        <div class="botoes-nota">
+          <button class="btn-nota" onclick="salvarNota(2, 1)">1</button>
+          <button class="btn-nota" onclick="salvarNota(2, 2)">2</button>
+          <button class="btn-nota" onclick="salvarNota(2, 3)">3</button>
+          <button class="btn-nota" onclick="salvarNota(2, 4)">4</button>
+          <button class="btn-nota" onclick="salvarNota(2, 5)">5</button>
+        </div>
+      </div>
+
+      <!-- Categoria: Terror -->
+      <div class="linha-genero">
+        <div class="nome-genero">
+          <span class="icone-genero terror">4</span> Terror
+        </div>
+        <div class="botoes-nota">
+          <button class="btn-nota" onclick="salvarNota(3, 1)">1</button>
+          <button class="btn-nota" onclick="salvarNota(3, 2)">2</button>
+          <button class="btn-nota" onclick="salvarNota(3, 3)">3</button>
+          <button class="btn-nota" onclick="salvarNota(3, 4)">4</button>
+          <button class="btn-nota" onclick="salvarNota(3, 5)">5</button>
+        </div>
+      </div>
+
+    </div> <!-- FIM DA LISTA DE GÊNEROS -->
+
+    <!-- Botão de Avançar -->
+    <div class="rodape-categorias">
+      <button class="btn-continuar" onclick="avancarParaProximaTela()">Continuar ➔</button>
+    </div>
+
+  </div> <!-- FIM DAS CATEGORIAS -->
+</div> <!-- FINAL DO CÓDIGO -->
+<script type="module" src="js/tela1.js"></script>
+</body>
+</html>
