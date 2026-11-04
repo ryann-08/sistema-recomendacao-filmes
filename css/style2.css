@@ -69,16 +69,17 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 
 /* LINKS MAIORES E EM CINZA CLARO BEM VISÍVEL */
 .nav-links a {
     color: #d4c6c6; 
     text-decoration: none;
-    font-size: 1.05rem; 
+    font-size: 0.9rem; 
     font-weight: 600;  
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 /* Efeito quando passa o mouse ou se estiver ativo */
@@ -328,10 +329,53 @@ h2, .categoria h2, .categoria h3 {
    RESPONSIVIDADE (Adaptação automática para Tablets e Celulares)
     */
 
-/* 1. Para Tablets e telas médias (até 768 pixels de largura) */
+/* RESPONSIVIDADE */
+
+/* Tablets e celulares (até 768px) */
 @media (max-width: 768px) {
     body {
-        padding: 1.5rem 1rem;
+        padding: 110px 1rem 1.5rem;
+    }
+
+    /* Navbar compacta, com TODOS os links */
+    .navbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .nav-left {
+        gap: 10px;
+    }
+
+    .nav-logo-text {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 0.72rem;
+    }
+
+    .user-avatar {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    .hud-dropdown {
+        width: 260px;
+        max-width: calc(100vw - 40px);
+    }
+
+    .logo-wrapper {
+        margin-top: 10px;
+        margin-bottom: 2rem;
     }
 
     .m-icon {
@@ -350,32 +394,60 @@ h2, .categoria h2, .categoria h3 {
         font-size: 1.3rem;
     }
 
+    /* 4 filmes por linha, sempre */
     .movie-roll {
-        gap: 25px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px 0;
     }
 
     .movie-card {
-        width: 150px;
-        height: 225px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+
+    /* Sem zoom exagerado no toque, pra não vazar da tela */
+    .movie-card:hover {
+        transform: scale(1.04);
     }
 }
 
-/* 2. Para Celulares (até 480 pixels de largura) */
+/* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
     body {
-        padding: 1rem 0.5rem;
+        padding: 100px 0.6rem 1rem;
+    }
+
+    .navbar {
+        padding: 0.45rem 0.55rem;
     }
 
     .nav-left {
-        gap: 15px;
+        gap: 6px;
+    }
+
+    .nav-logo-text {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
     }
 
     .nav-links {
-        display: none; /* Esconde os links textuais em telas muito pequenas para não quebrar o layout */
+        gap: 6px;
+    }
+
+    .nav-links a {
+        font-size: 0.64rem;
+    }
+
+    .user-avatar {
+        width: 26px;
+        height: 26px;
     }
 
     .logo-wrapper {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .m-icon {
@@ -411,12 +483,6 @@ h2, .categoria h2, .categoria h3 {
     }
 
     .movie-roll {
-        gap: 15px;
-        padding: 10px 5px;
-    }
-
-    .movie-card {
-        width: 135px;
-        height: 202px;
+        gap: 8px;
     }
 }
