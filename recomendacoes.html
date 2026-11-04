@@ -19,14 +19,19 @@
                 <a href="index.html">Voltar</a>
             </nav>
         </div>
-        <!--(RYAN)COLOQUEI A IMAGEM DE USUARIO NO LUGAR DO (MD) -->
-        <div class="nav-right">
-            <div class="user-avatar">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+       <!-- PERFIL E PAINEL DE ESTATÍSTICAS (HUD) -->
+<div class="nav-right">
+    <div class="user-profile-wrapper" style="position: relative;">
+        <div class="user-avatar" id="btn-perfil" style="cursor: pointer;" title="Ver Estatísticas do Perfil">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
+            </svg>
         </div>
+
+        <!-- O painel de estatísticas agora fica aqui em cima, escondido por padrão -->
+        <div id="hud-panel" class="hud-dropdown" style="display: none;"></div>
+    </div>
+</div>
     </header>
 
     <!-- LOGO "MUITA MALAFLIX" -->
@@ -132,8 +137,6 @@
         </div>
     </div>    
 
-    <!-- CAIXA DO PAINEL (HUD) -->
-    <div id="hud-panel"></div>
 
     <!-- BOTÃO DE VOLTAR AO INÍCIO -->
     <div class="rodape-voltar">

@@ -58,21 +58,24 @@ definirPerfilInicial(salvo ? JSON.parse(salvo) : [1, 1, 1, 1]);
 // ---------------------------------------------------------------------
 // PARTE 4: PEGAR OS ELEMENTOS DA PAGINA (HTML)
 // ---------------------------------------------------------------------
- 
+
+//Conta quantos filmes o usuario ja clicou("Assistiu")
+let assistidos = 0;
 // Cartazes de "Filmes disponiveis". O '[data-id]' pega so os que tem
 // data-id, entao os 5 quadrados de recomendados ficam de fora.
 const cartazes = document.querySelectorAll('.movie-card[data-id]');
- 
+
 // Caixa onde as 5 recomendacoes aparecem (id definido no HTML)
 const caixa = document.getElementById('recomendados-roll');
- 
+
 // Painel (HUD): perfil, ajuste e anti-bolha
 const painel = document.getElementById('hud-panel');
- 
-// Conta quantos filmes o usuario ja clicou ("assistiu").
-// Usado para decidir quando o anti-bolha entra.
-let assistidos = 0;
- 
+
+// Botão de perfil e painel flutuante no topo
+const btnPerfil = document.getElementById('btn-perfil');
+const hudPanel = document.getElementById('hud-panel');
+
+
 // ---------------------------------------------------------------------
 // PARTE 5: FUNCAO QUE COPIA A CAPA DE UM FILME
 // Recebe a imagem de destino (nova, da caixa de recomendados) e a
@@ -108,6 +111,8 @@ function copiarCapa(destino, original) {
 // Chamada quando a pagina abre e depois de cada clique.
 // ---------------------------------------------------------------------
 function mostrar() {
+  // Salva se o painel estava aberto antes de atualizar a tela
+  const painelAberto = hudPanel.style.display === 'block';
  
   // O anti-bolha so pode entrar a cada 3 filmes assistidos:
   //  - assistidos > 0        : nao entra antes do primeiro clique
@@ -168,8 +173,12 @@ function mostrar() {
   painel.innerHTML = `<p>Perfil: ${notas}</p>
     <p>Tamanho do ultimo ajuste: ${hud.tamanhoAjuste}</p>
     <p>Anti-bolha: ${hud.antiBolha}</p>`;
+
+  // Se o painel estava aberto antes do clique, mantém-se aberto!
+  if (painelAberto) {
+    hudPanel.style.display = 'block';
+  }
 }
- 
 // ---------------------------------------------------------------------
 // PARTE 7: CLICAR NUM CARTAZ = "ASSISTIU O FILME"
 // Para cada um dos 20 cartazes, ficamos "escutando" o clique.
@@ -208,3 +217,26 @@ cartazes.forEach(cartaz => cartaz.addEventListener('click', () => {
 // clique. Com ela, ja aparecem com as notas escolhidas na tela 1.
 // ---------------------------------------------------------------------
 mostrar();
+
+// ---------------------------------------------------------------------
+// PARTE 9: ABRIR E FECHAR O PAINEL DE ESTATÍSTICAS (HUD) NO TOPO
+// ---------------------------------------------------------------------
+if (btnPerfil && hudPanel) {
+  btnPerfil.addEventListener('click', (e) => {
+    e.stopPropagation();
+    // Alterna a visibilidade do painel flutuante
+    if (hudPanel.style.display === 'none' || hudPanel.style.display === '') {
+      hudPanel.style.display = 'block';
+    } else {
+      hudPanel.style.display = 'none';
+    }
+  });
+
+  // Fecha o painel se o utilizador clicar fora do painel, do botão e dos filmes
+  document.addEventListener('click', (e) => {
+    const clicouNoFilme = e.target.closest('.movie-card');
+    if ((!hudPanel.contains(e.target) && !btnPerfil.contains(e.target)) && !clicouNoFilme) {
+      hudPanel.style.display = 'none';
+    }
+  });
+}
