@@ -13,13 +13,16 @@ html {
 
 body {
     background-color: #141414; /* Cor de fundo escura principal */
+    padding-top: 150px; /* Aumentado para afastar a logo da navbar flutuante */
     background-image: 
         radial-gradient(circle at -10% 30%, rgba(94, 19, 198, 0.25) 0%, transparent 50%),
         radial-gradient(circle at 110% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     background-attachment: fixed; /* Mantém o efeito de luz fixo ao rolar a tela */
     color: #e5e5e5; /* Cor padrão dos textos */
     font-family: 'Poppins', sans-serif;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
     min-height: 100vh;
 }
 
@@ -27,19 +30,32 @@ body {
    MENU DE NAVEGAÇÃO (Links Maiores e Destacados)
    ========================================================= */
 .navbar {
+    position: fixed;
+    top: 15px; /* Afasta um bocadinho do topo da tela para parecer flutuante */
+    left: 20px; /* Margem à esquerda */
+    right: 20px; /* Margem à direita (assim não ocupa os 100% e cria o efeito de flutuação) */
+    width: auto; /* Deixa a largura automática preenchendo o espaço entre as margens */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 0.5rem 0;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 2rem;
+    
+    /* Fundo mais transparente (mudei o último valor de 0.95 para 0.6 para ficar mais translúcido) */
+    background-color: rgba(20, 20, 20, 0.6); 
+    backdrop-filter: blur(12px); /* Efeito de vidro fosco mais forte */
+    
+    /* Bordas suaves em toda a volta para dar o destaque elegante */
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 12px; /* Arredonda os cantos para criar o aspeto de painel flutuante */
+    
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra subtil para dar profundidade */
 }
-
 .nav-left {
     display: flex;
     align-items: center;
     gap: 40px;
+    margin-right: auto;
 }
 
 .nav-logo-text {
