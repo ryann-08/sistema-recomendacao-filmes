@@ -28,8 +28,8 @@ function obterPerfilAtual(){
 function registrarFilmeAssistido(indiceGenero){
 
     //aqui duas regras constantes, assistiu ganha (+0.2) outros generos perdem por nao ter sido assistidos
-    const INCREMENTO = 0.2;
-    const DECREMENTO = 0.08;
+    const INCREMENTO = 0.3;
+    const DECREMENTO = 0.1;
 
     //aqui estou zerando a lista, para conseguir registrar quanto cada um dos generos vai mudar
     ultimoAjuste = [0, 0, 0, 0];
