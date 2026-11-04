@@ -1,6 +1,9 @@
 /* Importando a fonte premium do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 /* CORRIGIDO: O asterisco (*) aplica o reset de margens em todos os elementos da página */
 * {
     margin: 0;
@@ -259,6 +262,27 @@ h2, .categoria h2, .categoria h3 {
 
 .footer-links a:hover {
     color: #8a2be2;
+}
+.rodape-voltar {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8a2be2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    transform: scale(1.05);
+    background-color: #9d2ae8;
 }
 
 /* 
