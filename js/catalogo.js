@@ -13,31 +13,60 @@ class Filme {
 const catalogo = [
 //  Filmes de Terror
     new Filme(1, "O Exorcista",[5, 0, 0, 0]),
-    new Filme(2, "It: A Coisa",[5, 1, 0, 2]),
+    new Filme(2, "It: A Coisa",[5, 0, 0, 1]),
     new Filme(3, "Invocação do Mal",[5, 0, 1, 1]),
     new Filme(4, "O Iluminado",[5, 0, 1, 0]),
-    new Filme(5, "Pânico", [5, 2, 1, 2]),
+    new Filme(5, "Pânico", [5, 0, 0, 1]),
+    new Filme(6, "Annabelle", [5, 0, 0, 1]),
+    new Filme(7, "Hereditário", [5, 0, 1, 0]),
+    new Filme(8, "Corra!", [5, 1, 0, 1]),
+    new Filme(9, "Jogos Mortais", [5, 0, 0, 1]),
+    new Filme(10, "A Freira", [5, 0, 0, 1]),
+    new Filme(11, "O Chamado", [5, 0, 0, 1]),
+    new Filme(12, "Sobrenatural", [5, 0, 0, 1]),
 
 //  Filmes de Comédia
-    new Filme(6, "As Branquelas",[0, 5, 0, 1]),
-    new Filme(7, "Se Beber, Não Case!",[0, 5, 1, 1]),
-    new Filme(8, "Todo Mundo em Pânico",[3, 5, 0, 1]),
-    new Filme(9, "Debi & Lóide",[0, 5, 0, 1]),
-    new Filme(10, "Click", [0, 4, 3, 1]),
+    new Filme(13, "As Branquelas",[0, 5, 0, 1]),
+    new Filme(14, "Se Beber, Não Case!",[0, 5, 1, 1]),
+    new Filme(15, "Todo Mundo em Pânico",[1, 5, 0, 0]),
+    new Filme(16, "Debi & Lóide",[0, 5, 0, 1]),
+    new Filme(17, "Click", [0, 5, 1, 0]),
+    new Filme(18, "Superbad: É Hoje", [0, 5, 0, 1]),
+    new Filme(19, "Gente Grande", [0, 5, 0, 0]),
+    new Filme(20, "Esposa de Mentirinha", [0, 5, 1, 0]),
+    new Filme(21, "O Máskara", [0, 5, 0, 2]),
+    new Filme(22, "Vovó... Zona", [0, 5, 0, 2]),
+    new Filme(23, "Norbit", [0, 5, 2, 0]),
+    new Filme(24, "O Pequenino", [0, 5, 0, 2]),
 
 //  Filmes de Romance
-    new Filme(11, "Titanic",[0, 0, 5, 2]),
-    new Filme(12, "Diário de uma Paixão",[0, 0, 5, 0]),
-    new Filme(13, "Como Eu Era Antes de Você",[0, 1, 5, 0]),
-    new Filme(14, "10 Coisas que Eu Odeio em Você",[0, 3, 5, 0]),
-    new Filme(15, "Simplesmente Acontece", [0, 2, 5, 0]),
+    new Filme(25, "Titanic",[0, 0, 5, 0]),
+    new Filme(26, "Diário de uma Paixão",[0, 0, 5, 0]),
+    new Filme(27, "Como Eu Era Antes de Você",[0, 1, 5, 0]),
+    new Filme(28, "10 Coisas que Eu Odeio em Você",[0, 1, 5, 0]),
+    new Filme(29, "Simplesmente Acontece", [0, 1, 5, 0]),
+    new Filme(30, "A Culpa é das Estrelas", [0, 1, 5, 0]),
+    new Filme(31, "Querido John", [0, 0, 5, 1]),
+    new Filme(32, "Orgulho e Preconceito", [0, 0, 5, 0]),
+    new Filme(33, "La La Land: Cantando Estações", [0, 3, 5, 2]),
+    new Filme(34, "Para Todos os Garotos que Já Amei", [0, 2, 5, 0]),
+    new Filme(35, "Questão de Tempo", [0, 2, 5, 1]),
+    new Filme(36, "Continência ao Amor", [0, 1, 5, 1]),
+
 
 //  Filmes de Ação
-    new Filme(16, "Vingadores: Ultimato",[0, 1, 1, 5]),
-    new Filme(17, "John Wick",[0, 0, 0, 5]),
-    new Filme(18, "Missão Impossível: Efeito Fallout",[0, 0, 0, 5]),
-    new Filme(19, "Homem-Aranha: Sem Volta para Casa",[0, 1, 2, 5]),
-    new Filme(20, "Mad Max: Estrada da Fúria", [0, 0, 0, 5])
+    new Filme(37, "Vingadores: Ultimato",[0, 0, 0, 5]),
+    new Filme(38, "John Wick",[0, 0, 0, 5]),
+    new Filme(39, "Missão Impossível: Efeito Fallout",[0, 0, 0, 5]),
+    new Filme(40, "Homem-Aranha: Sem Volta para Casa",[0, 1, 1, 5]),
+    new Filme(41, "Mad Max: Estrada da Fúria", [0, 0, 0, 5]),
+    new Filme(42, "Batman: O Cavaleiro das Trevas", [1, 0, 0, 5]),
+    new Filme(43, "Velozes e Furiosos", [0, 0, 1, 5]),
+    new Filme(44, "Top Gun: Maverick", [0, 0, 1, 5]),
+    new Filme(45, "Matrix", [0, 0, 1, 5]),
+    new Filme(46, "Gladiador", [0, 0, 1, 5]),
+    new Filme(47, "Pantera Negra", [0, 0, 1, 5]),
+    new Filme(48, "Resgate", [0, 0, 0, 5]),
 ];
 
 //  Função responsável por normalizar um vetor.
@@ -140,35 +169,37 @@ function obterGeneroMenosAssistido(vetorUsuario) {
 //  Função responsável por selecionar um filme que diversifique
 //  o perfil do usuário, utilizando seu gênero menos representado.
 
+// Função responsável por selecionar um filme de um gênero
+// pouco representado no perfil do usuário.
+
 function recomendarFilmeDiversificado(vetorUsuario) {
 
-//  Identifica qual gênero possui a menor representação no perfil do usuário.
+    // Identifica o gênero menos representado no perfil.
     const generoMenosAssistido = obterGeneroMenosAssistido(vetorUsuario);
 
-//  Obtém a posição desse gênero dentro do vetor.
+    // Obtém o índice correspondente a esse gênero.
     const indiceMenosAssistido = indiceGenero[generoMenosAssistido];
 
-//  Filtra os filmes que possuem o gênero menos representado,
-//  mas que não possuem esse gênero como característica principal.
-    const candidatos = catalogo.filter(filme =>
-        filme.genero[indiceMenosAssistido] > 0 &&
-        filme.genero[indiceMenosAssistido] < Math.max(...filme.genero));
+    // Seleciona filmes nos quais o gênero menos representado
+    // está presente e é o gênero predominante.
+    const candidatos = catalogo.filter(filme => {
 
-//  Verifica se nenhum filme atende aos critérios de diversificação.
-    if(candidatos.length === 0) {
+        const pesoGenero = filme.genero[indiceMenosAssistido];
+        const maiorPeso = Math.max(...filme.genero);
 
-//  Retorna null para indicar que nenhum candidato foi encontrado.
+        return pesoGenero > 0 && pesoGenero === maiorPeso;
+    });
+
+    // Verifica se existem filmes candidatos.
+    if (candidatos.length === 0) {
         return null;
     }
 
-//  Gera aleatoriamente um índice válido dentro da lista de candidatos.
+    // Sorteia um filme entre os candidatos.
     const indiceAleatorio = Math.floor(Math.random() * candidatos.length);
 
-//  Obtém o filme correspondente ao índice sorteado.
-    const filmeEscolhido = candidatos[indiceAleatorio];
-
-//  Retorna o filme escolhido.
-    return filmeEscolhido;
+    // Retorna o filme escolhido.
+    return candidatos[indiceAleatorio];
 };
 
 export {
