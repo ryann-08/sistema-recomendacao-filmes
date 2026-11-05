@@ -20,19 +20,19 @@
                 <a href="index.html">Voltar</a>
             </nav>
         </div>
-       <!-- PERFIL E PAINEL DE ESTATÍSTICAS (HUD) -->
-<div class="nav-right">
-    <div class="user-profile-wrapper" style="position: relative;">
-        <div class="user-avatar" id="btn-perfil" style="cursor: pointer;" title="Ver Estatísticas do Perfil">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-        </div>
+        <!-- PERFIL E PAINEL DE ESTATÍSTICAS (HUD) -->
+        <div class="nav-right">
+            <div class="user-profile-wrapper" style="position: relative;">
+                <div class="user-avatar" id="btn-perfil" style="cursor: pointer;" title="Ver Estatísticas do Perfil">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
 
-        <!-- O painel de estatísticas agora fica aqui em cima, escondido por padrão -->
-        <div id="hud-panel" class="hud-dropdown" style="display: none;"></div>
-    </div>
-</div>
+                <!-- O painel de estatísticas agora fica aqui em cima, escondido por padrão -->
+                <div id="hud-panel" class="hud-dropdown" style="display: none;"></div>
+            </div>
+        </div>
     </header>
 
     <!-- LOGO "MUITA MALAFLIX" -->
@@ -76,11 +76,12 @@
         </div>
     </div>
 
-    <!-- CAIXA DOS RECOMENDADOS (Sem data-id, controlada pelo JS) -->
+    <!-- CAIXA DOS RECOMENDADOS (6 cartazes, sem data-id, controlada pelo JS) -->
     <div class="categoria"> 
         <h2>Filmes recomendados</h2>
         <div class="movie-roll" id="recomendados-roll"> 
             <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card"> 
+            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
             <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
             <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
             <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
@@ -90,7 +91,7 @@
 
     <h2>Todos os Gêneros</h2>
 
-    <!-- 1. CATEGORIA: TERROR -->
+    <!-- 1. CATEGORIA: TERROR (IDs 1 a 12) -->
     <div class="categoria">
         <h3>Terror</h3>
         <div class="movie-roll">
@@ -99,49 +100,84 @@
             <img src="capas de filmes/Terror/invocacao.jpg" alt="Invocação do Mal" class="movie-card" data-id="3" data-titulo="Invocação do Mal">
             <img src="capas de filmes/Terror/iluminado.jpg" alt="O Iluminado" class="movie-card" data-id="4" data-titulo="O Iluminado">
             <img src="capas de filmes/Terror/panico.jpg" alt="Pânico" class="movie-card" data-id="5" data-titulo="Pânico">
+            <img src="capas de filmes/Terror/annabelle.jpg" alt="Annabelle" class="movie-card" data-id="6" data-titulo="Annabelle">
+        </div>
+        <div class="movie-roll">
+            <img src="capas de filmes/Terror/hereditario.jpg" alt="Hereditário" class="movie-card" data-id="7" data-titulo="Hereditário">
+            <img src="capas de filmes/Terror/corra.jpg" alt="Corra!" class="movie-card" data-id="8" data-titulo="Corra!">
+            <img src="capas de filmes/Terror/jogosmortais.jpg" alt="Jogos Mortais" class="movie-card" data-id="9" data-titulo="Jogos Mortais">
+            <img src="capas de filmes/Terror/afreira.jpg" alt="A Freira" class="movie-card" data-id="10" data-titulo="A Freira">
+            <img src="capas de filmes/Terror/chamado.jpg" alt="O Chamado" class="movie-card" data-id="11" data-titulo="O Chamado">
+            <img src="capas de filmes/Terror/sobrenatural.jpg" alt="Sobrenatural" class="movie-card" data-id="12" data-titulo="Sobrenatural">
         </div>
     </div>
 
-    <!-- 2. CATEGORIA: COMÉDIA -->
+    <!-- 2. CATEGORIA: COMÉDIA (IDs 13 a 24) -->
     <div class="categoria">
         <h3>Comédia</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Comedia/branquelas.jpg" alt="As Branquelas" class="movie-card" data-id="6" data-titulo="As Branquelas">
-            <img src="capas de filmes/Comedia/sebeber.jpg" alt="Se Beber, Não Case!" class="movie-card" data-id="7" data-titulo="Se Beber, Não Case!">
-            <img src="capas de filmes/Comedia/todomundo.jpg" alt="Todo Mundo em Pânico" class="movie-card" data-id="8" data-titulo="Todo Mundo em Pânico">
-            <img src="capas de filmes/Comedia/debieloide.jpg" alt="Debi & Lóide" class="movie-card" data-id="9" data-titulo="Debi & Lóide">
-            <img src="capas de filmes/Comedia/click.jpg" alt="Click" class="movie-card" data-id="10" data-titulo="Click">
+            <img src="capas de filmes/Comedia/branquelas.jpg" alt="As Branquelas" class="movie-card" data-id="13" data-titulo="As Branquelas">
+            <img src="capas de filmes/Comedia/sebeber.jpg" alt="Se Beber, Não Case!" class="movie-card" data-id="14" data-titulo="Se Beber, Não Case!">
+            <img src="capas de filmes/Comedia/todomundo.jpg" alt="Todo Mundo em Pânico" class="movie-card" data-id="15" data-titulo="Todo Mundo em Pânico">
+            <img src="capas de filmes/Comedia/debieloide.jpg" alt="Debi & Lóide" class="movie-card" data-id="16" data-titulo="Debi & Lóide">
+            <img src="capas de filmes/Comedia/click.jpg" alt="Click" class="movie-card" data-id="17" data-titulo="Click">
+            <img src="capas de filmes/Comedia/superbad.jpg" alt="Superbad: É Hoje" class="movie-card" data-id="18" data-titulo="Superbad: É Hoje">
+        </div>
+        <div class="movie-roll">
+            <img src="capas de filmes/Comedia/gentegrande.jpg" alt="Gente Grande" class="movie-card" data-id="19" data-titulo="Gente Grande">
+            <img src="capas de filmes/Comedia/esposadementirinha.jpg" alt="Esposa de Mentirinha" class="movie-card" data-id="20" data-titulo="Esposa de Mentirinha">
+            <img src="capas de filmes/Comedia/omaskara.jpg" alt="O Máskara" class="movie-card" data-id="21" data-titulo="O Máskara">
+            <img src="capas de filmes/Comedia/vovozona.jpg" alt="Vovó... Zona" class="movie-card" data-id="22" data-titulo="Vovó... Zona">
+            <img src="capas de filmes/Comedia/norbit.jpg" alt="Norbit" class="movie-card" data-id="23" data-titulo="Norbit">
+            <img src="capas de filmes/Comedia/pequeno.jpg" alt="O Pequenino" class="movie-card" data-id="24" data-titulo="O Pequenino">
         </div>
     </div>    
 
-    <!-- 3. CATEGORIA: ROMANCE -->
+    <!-- 3. CATEGORIA: ROMANCE (IDs 25 a 36) -->
     <div class="categoria">
         <h3>Romance</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Romance/titanic.jpg" alt="Titanic" class="movie-card" data-id="11" data-titulo="Titanic">
-            <img src="capas de filmes/Romance/diario.jpg" alt="Diário de uma Paixão" class="movie-card" data-id="12" data-titulo="Diário de uma Paixão">
-            <img src="capas de filmes/Romance/comoeuera.jpg" alt="Como Eu Era Antes de Você" class="movie-card" data-id="13" data-titulo="Como Eu Era Antes de Você">
-            <img src="capas de filmes/Romance/10coisas.jpg" alt="10 Coisas que Eu Odeio em Você" class="movie-card" data-id="14" data-titulo="10 Coisas que Eu Odeio em Você">
-            <img src="capas de filmes/Romance/simplesmente.jpg" alt="Simplesmente Acontece" class="movie-card" data-id="15" data-titulo="Simplesmente Acontece">
+            <img src="capas de filmes/Romance/titanic.jpg" alt="Titanic" class="movie-card" data-id="25" data-titulo="Titanic">
+            <img src="capas de filmes/Romance/diario.jpg" alt="Diário de uma Paixão" class="movie-card" data-id="26" data-titulo="Diário de uma Paixão">
+            <img src="capas de filmes/Romance/comoeuera.jpg" alt="Como Eu Era Antes de Você" class="movie-card" data-id="27" data-titulo="Como Eu Era Antes de Você">
+            <img src="capas de filmes/Romance/10coisas.jpg" alt="10 Coisas que Eu Odeio em Você" class="movie-card" data-id="28" data-titulo="10 Coisas que Eu Odeio em Você">
+            <img src="capas de filmes/Romance/simplesmente.jpg" alt="Simplesmente Acontece" class="movie-card" data-id="29" data-titulo="Simplesmente Acontece">
+            <img src="capas de filmes/Romance/aculpaedalasestrelas.jpg" alt="A Culpa é das Estrelas" class="movie-card" data-id="30" data-titulo="A Culpa é das Estrelas">
+        </div>
+        <div class="movie-roll">
+            <img src="capas de filmes/Romance/queridojohn.jpg" alt="Querido John" class="movie-card" data-id="31" data-titulo="Querido John">
+            <img src="capas de filmes/Romance/orgulhoepreconceito.jpg" alt="Orgulho e Preconceito" class="movie-card" data-id="32" data-titulo="Orgulho e Preconceito">
+            <img src="capas de filmes/Romance/lalaland.jpg" alt="La La Land" class="movie-card" data-id="33" data-titulo="La La Land">
+            <img src="capas de filmes/Romance/paratodososgarotos.jpg" alt="Para Todos os Garotos que Já Amei" class="movie-card" data-id="34" data-titulo="Para Todos os Garotos que Já Amei">
+            <img src="capas de filmes/Romance/questaotempo.jpg" alt="Questão de Tempo" class="movie-card" data-id="35" data-titulo="Questão de Tempo">
+            <img src="capas de filmes/Romance/continencia.jpg" alt="Continência ao Amor" class="movie-card" data-id="36" data-titulo="Continência ao Amor">
         </div>
     </div>
 
-    <!-- 4. CATEGORIA: AÇÃO -->
+    <!-- 4. CATEGORIA: AÇÃO (IDs 37 a 48) -->
     <div class="categoria">
         <h3>Ação</h3>
         <div class="movie-roll">
-            <img src="capas de filmes/Ação/vingadores.jpg" alt="Vingadores: Ultimato" class="movie-card" data-id="16" data-titulo="Vingadores: Ultimato">
-            <img src="capas de filmes/Ação/johnwick.jpg" alt="John Wick" class="movie-card" data-id="17" data-titulo="John Wick">
-            <img src="capas de filmes/Ação/missao.jpg" alt="Missão Impossível: Efeito Fallout" class="movie-card" data-id="18" data-titulo="Missão Impossível: Efeito Fallout">
-            <img src="capas de filmes/Ação/aranha.jpg" alt="Homem-Aranha: Sem Volta para Casa" class="movie-card" data-id="19" data-titulo="Homem-Aranha: Sem Volta para Casa">
-            <img src="capas de filmes/Ação/madmax.jpg" alt="Mad Max: Estrada da Fúria" class="movie-card" data-id="20" data-titulo="Mad Max: Estrada da Fúria">
+            <img src="capas de filmes/Ação/vingadores.jpg" alt="Vingadores: Ultimato" class="movie-card" data-id="37" data-titulo="Vingadores: Ultimato">
+            <img src="capas de filmes/Ação/johnwick.jpg" alt="John Wick" class="movie-card" data-id="38" data-titulo="John Wick">
+            <img src="capas de filmes/Ação/missao.jpg" alt="Missão Impossível: Efeito Fallout" class="movie-card" data-id="39" data-titulo="Missão Impossível: Efeito Fallout">
+            <img src="capas de filmes/Ação/aranha.jpg" alt="Homem-Aranha: Sem Volta para Casa" class="movie-card" data-id="40" data-titulo="Homem-Aranha: Sem Volta para Casa">
+            <img src="capas de filmes/Ação/madmax.jpg" alt="Mad Max: Estrada da Fúria" class="movie-card" data-id="41" data-titulo="Mad Max: Estrada da Fúria">
+            <img src="capas de filmes/Ação/batman.jpg" alt="Batman: O Cavaleiro das Trevas" class="movie-card" data-id="42" data-titulo="Batman: O Cavaleiro das Trevas">
+        </div>
+        <div class="movie-roll">
+            <img src="capas de filmes/Ação/velozes.jpg" alt="Velozes e Furiosos" class="movie-card" data-id="43" data-titulo="Velozes e Furiosos">
+            <img src="capas de filmes/Ação/topgun.jpg" alt="Top Gun: Maverick" class="movie-card" data-id="44" data-titulo="Top Gun: Maverick">
+            <img src="capas de filmes/Ação/matrix.jpg" alt="Matrix" class="movie-card" data-id="45" data-titulo="Matrix">
+            <img src="capas de filmes/Ação/gladiador.jpg" alt="Gladiador" class="movie-card" data-id="46" data-titulo="Gladiador">
+            <img src="capas de filmes/Ação/panteranegra.jpg" alt="Pantera Negra" class="movie-card" data-id="47" data-titulo="Pantera Negra">
+            <img src="capas de filmes/Ação/resgate.jpg" alt="Resgate" class="movie-card" data-id="48" data-titulo="Resgate">
         </div>
     </div>    
 
-
     <!-- BOTÃO DE VOLTAR AO INÍCIO -->
     <div class="rodape-voltar">
-      <a href="#topo" class="btn-voltar">Voltar a Recomendações</a>
+        <a href="#topo" class="btn-voltar">Voltar a Recomendações</a>
     </div>
 
     <!-- RODAPÉ DA PÁGINA (Footer) -->
@@ -156,7 +192,7 @@
         </div>
     </footer>
 
-    <!-- DETECTOR AUTOMÁTICO DE EXTENSÕES -->
+    <!-- DETECTOR AUTOMÁTICO DE EXTENSÕES + BOTÃO ROXO DE ASSISTIR -->
     <script>
         const extensoes = ['.jpeg', '.webp', '.png', '.jpg.jpg', '.jpg.jpeg', '.jpg.webp', '.JPG', '.JPEG'];
         document.querySelectorAll('.movie-card').forEach(img => {
@@ -168,6 +204,42 @@
                     tentativa++;
                 }
             });
+        });
+
+        // Cria o botão roxo "Assistir" em cada cartaz de filme
+        document.querySelectorAll('.movie-card[data-id]').forEach(img => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-wrapper';
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+
+            const btn = document.createElement('button');
+            btn.className = 'btn-assistir';
+            btn.innerHTML = '&#9654; Assistir';
+            wrapper.appendChild(btn);
+
+            img.addEventListener('click', function(e) {
+                if (!img.dataset.confirmado) {
+                    e.stopImmediatePropagation();
+                    document.querySelectorAll('.card-wrapper.ativo').forEach(w => w.classList.remove('ativo'));
+                    wrapper.classList.add('ativo');
+                } else {
+                    delete img.dataset.confirmado;
+                }
+            }, true);
+
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                wrapper.classList.remove('ativo');
+                img.dataset.confirmado = 'true';
+                img.click();
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.card-wrapper')) {
+                document.querySelectorAll('.card-wrapper.ativo').forEach(w => w.classList.remove('ativo'));
+            }
         });
     </script>
 

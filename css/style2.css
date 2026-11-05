@@ -4,6 +4,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 /* CORRIGIDO: O asterisco (*) aplica o reset de margens em todos os elementos da página */
 * {
     margin: 0;
@@ -27,30 +28,26 @@ body {
 }
 
 /* =========================================================
-   MENU DE NAVEGAÇÃO (Links Maiores e Destacados)
+   MENU DE NAVEGAÇÃO FLUTUANTE (Navbar)
    ========================================================= */
 .navbar {
     position: fixed;
-    top: 15px; /* Afasta um bocadinho do topo da tela para parecer flutuante */
-    left: 20px; /* Margem à esquerda */
-    right: 20px; /* Margem à direita (assim não ocupa os 100% e cria o efeito de flutuação) */
-    width: auto; /* Deixa a largura automática preenchendo o espaço entre as margens */
+    top: 15px;
+    left: 20px;
+    right: 20px;
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 2rem;
-    
-    /* Fundo mais transparente (mudei o último valor de 0.95 para 0.6 para ficar mais translúcido) */
     background-color: rgba(20, 20, 20, 0.6); 
-    backdrop-filter: blur(12px); /* Efeito de vidro fosco mais forte */
-    
-    /* Bordas suaves em toda a volta para dar o destaque elegante */
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15); 
-    border-radius: 12px; /* Arredonda os cantos para criar o aspeto de painel flutuante */
-    
+    border-radius: 12px;
     z-index: 1000;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra subtil para dar profundidade */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
+
 .nav-left {
     display: flex;
     align-items: center;
@@ -72,7 +69,6 @@ body {
     gap: 15px;
 }
 
-/* LINKS MAIORES E EM CINZA CLARO BEM VISÍVEL */
 .nav-links a {
     color: #d4c6c6; 
     text-decoration: none;
@@ -82,14 +78,12 @@ body {
     white-space: nowrap;
 }
 
-/* Efeito quando passa o mouse ou se estiver ativo */
 .nav-links a:hover,
 .nav-links a.active {
     color: #c6c6c6;
     text-shadow: 0 0 10px rgba(180, 170, 190, 0.8);
 }
 
-/* Ícone de perfil do utilizador no canto direito */
 .user-avatar {
     width: 35px;
     height: 35px;
@@ -105,9 +99,9 @@ body {
     cursor: pointer;
 }
 
-/* 
+/* =========================================================
    ESTILO DO LOGO "M" (MUITA MALAFLIX) CENTRALIZADO
-    */
+   ========================================================= */
 .logo-wrapper {
     display: flex;
     justify-content: center;
@@ -123,19 +117,17 @@ body {
 }
 
 .logo-vertical:hover {
-    transform: scale(1.03); /* Leve zoom ao passar o mouse no logo */
+    transform: scale(1.03);
 }
 
-/* Tamanho e brilho neon do ícone "M" */
 .m-icon {
-    width: 75px; /* Tamanho ajustado para não ficar gigante */
+    width: 75px;
     max-width: 75px;
     height: auto;
     filter: drop-shadow(0 6px 16px rgba(138, 43, 226, 0.5));
     margin-bottom: 6px;
 }
 
-/* Palavra "MUITA" em branco com letras espaçadas */
 .linha-muita {
     color: #ffffff;
     font-size: 1.1rem;
@@ -145,7 +137,6 @@ body {
     line-height: 1.1;
 }
 
-/* Palavra "MALAFLIX" em roxo vibrante */
 .linha-malaflix {
     font-size: 1.9rem;
     font-weight: 800;
@@ -158,7 +149,6 @@ body {
     filter: drop-shadow(0 2px 10px rgba(138, 43, 226, 0.45));
 }
 
-/* Linha inferior: — FILMES • SÉRIES • VOCÊ — */
 .linha-slogan {
     display: flex;
     align-items: center;
@@ -170,21 +160,19 @@ body {
     margin-top: 6px;
 }
 
-/* Tracinhos horizontais ao lado do slogan */
 .linha-slogan .traco {
     width: 28px;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.45);
 }
 
-/* 
-   CATEGORIAS E CARTAZES DE FILMES
-    */
+/* =========================================================
+   CATEGORIAS E DUAS FILEIRAS DE 6 CARTAZES
+   ========================================================= */
 .categoria {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }
 
-/* Estilo dos subtítulos ("Filmes recomendados", "Terror", "Ação", etc.) */
 h2, .categoria h2, .categoria h3 {
     color: #e5e5e5;
     font-size: 1.6rem;
@@ -192,23 +180,32 @@ h2, .categoria h2, .categoria h3 {
     margin-bottom: 20px;
     text-align: left;
     padding-left: 15px;
-    border-left: 5px solid #8a2be2; /* Detalhe lateral roxo */
+    border-left: 5px solid #8a2be2;
 }
 
-/* Fileira que organiza os cartazes lado a lado */
+/* Garante exatamente 6 filmes lado a lado no PC/Notebook sem quebrar linha */
 .movie-roll {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 45px; 
-    padding: 20px 10px;
-    justify-content: center; 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    padding: 15px 10px;
+    max-width: 1320px;
+    margin: 0 auto;
+    justify-items: center;
 }
 
-/* Estilo individual de cada cartaz de filme no PC */
+/* Espaçamento entre a Fileira 1 e a Fileira 2 da mesma categoria */
+.categoria .movie-roll + .movie-roll {
+    margin-top: 28px;
+}
+
+/* Estilo individual de cada cartaz de filme */
 .movie-card {
+    display: block;
     background-color: #242424;
-    width: 180px;  
-    height: 270px; 
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 2 / 3;
     border-radius: 10px; 
     object-fit: cover; 
     overflow: hidden;
@@ -224,14 +221,68 @@ h2, .categoria h2, .categoria h3 {
     object-fit: cover;
 }
 
-/* Efeito disparado quando passamos o mouse por cima do filme */
 .movie-card:hover {
-    transform: scale(1.10) translateY(-5px); 
+    transform: scale(1.08) translateY(-5px); 
     border: 2px solid #8a2be2; 
     box-shadow: 0 10px 25px rgba(138, 43, 226, 0.6); 
 }
 
-/* Painel inferior (HUD) onde entrarão os números do Filipe */
+/* =========================================================
+   BOTÃO ROXO DE "ASSISTIR" SOBRE O CARTAZ
+   ========================================================= */
+.card-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 2 / 3;
+}
+
+.card-wrapper .movie-card {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-assistir {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(135deg, #b833ff, #6200ea);
+    color: #ffffff;
+    border: 1px solid #e29eff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(184, 51, 255, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.card-wrapper.ativo .btn-assistir {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.card-wrapper.ativo .movie-card {
+    filter: brightness(0.35);
+    border: 2px solid #b833ff;
+}
+
+.btn-assistir:hover {
+    background: #d55cff;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* =========================================================
+   PAINEL DE ESTATÍSTICAS (HUD) E RODAPÉ
+   ========================================================= */
 #hud-panel {
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #333;
@@ -241,14 +292,32 @@ h2, .categoria h2, .categoria h3 {
     text-align: center;
 }
 
-/* Esconde o painel HUD automaticamente enquanto ele estiver vazio */
 #hud-panel:empty {
     display: none;
 }
 
-/* =========================================================
-   ESTILO DO RODAPÉ (Footer)
-   ========================================================= */
+.hud-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    width: 280px;
+    color: #e5e5e5;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#hud-panel div, #hud-panel p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
 .site-footer {
     background-color: rgba(0, 0, 0, 0.6);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -280,6 +349,7 @@ h2, .categoria h2, .categoria h3 {
 .footer-links a:hover {
     color: #8a2be2;
 }
+
 .rodape-voltar {
     text-align: center;
     margin: 40px 0;
@@ -302,34 +372,9 @@ h2, .categoria h2, .categoria h3 {
     background-color: #9d2ae8;
 }
 
-/* PAINEL DE ESTATÍSTICAS FLUTUANTE (HUD) */
-.hud-dropdown {
-    position: absolute;
-    top: 45px;
-    right: 0;
-    background-color: rgba(20, 20, 20, 0.95);
-    border: 1px solid rgba(138, 43, 226, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    width: 280px;
-    color: #e5e5e5;
-    font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-#hud-panel div, #hud-panel p {
-    margin: 5px 0;
-    line-height: 1.4;
-}
-
-/* 
-   RESPONSIVIDADE (Adaptação automática para Tablets e Celulares)
-    */
-
-/* RESPONSIVIDADE */
+/* =========================================================
+   RESPONSIVIDADE (Tablets e Celulares)
+   ========================================================= */
 
 /* Tablets e celulares (até 768px) */
 @media (max-width: 768px) {
@@ -337,7 +382,6 @@ h2, .categoria h2, .categoria h3 {
         padding: 110px 1rem 1.5rem;
     }
 
-    /* Navbar compacta, com TODOS os links */
     .navbar {
         top: 10px;
         left: 10px;
@@ -394,7 +438,7 @@ h2, .categoria h2, .categoria h3 {
         font-size: 1.3rem;
     }
 
-    /* 4 filmes por linha, sempre */
+    /* 4 filmes por linha no mobile */
     .movie-roll {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -402,13 +446,23 @@ h2, .categoria h2, .categoria h3 {
         padding: 10px 0;
     }
 
-    .movie-card {
+    .categoria .movie-roll + .movie-roll {
+        margin-top: 15px;
+    }
+
+    .movie-card,
+    .card-wrapper {
         width: 100%;
+        max-width: none;
         height: auto;
         aspect-ratio: 2 / 3;
     }
 
-    /* Sem zoom exagerado no toque, pra não vazar da tela */
+    .btn-assistir {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
     .movie-card:hover {
         transform: scale(1.04);
     }
