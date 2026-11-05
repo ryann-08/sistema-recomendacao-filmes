@@ -387,6 +387,7 @@ h2, .categoria h2, .categoria h3 {
         left: 10px;
         right: 10px;
         padding: 0.5rem 0.7rem;
+        justify-content: space-between;
     }
 
     .nav-left {
@@ -398,18 +399,42 @@ h2, .categoria h2, .categoria h3 {
         letter-spacing: 1px;
     }
 
+    /* Esconde os links gerais de navegação no telemóvel */
     .nav-links {
-        gap: 8px;
+        display: none;
     }
 
-    .nav-links a {
+    /* Mantém visível apenas o botão Voltar de forma limpa */
+    .nav-links.ativo, 
+    .nav-links .btn-voltar-nav {
+        display: inline-block;
         font-size: 0.72rem;
+    }
+
+    .nav-right {
+        gap: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Botão "Ver Recomendações" compacto no header */
+    .nav-right a.btn-voltar {
+        padding: 4px 10px;
+        font-size: 11px;
+        white-space: nowrap;
+        text-decoration: none;
     }
 
     .user-avatar {
         flex-shrink: 0;
         width: 30px;
         height: 30px;
+        padding: 4px;
+    }
+
+    .user-avatar svg {
+        width: 16px;
+        height: 16px;
     }
 
     .hud-dropdown {
@@ -438,11 +463,11 @@ h2, .categoria h2, .categoria h3 {
         font-size: 1.3rem;
     }
 
-    /* 4 filmes por linha no mobile */
+    /* Grelha limpa de 3 filmes por linha no mobile */
     .movie-roll {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
         padding: 10px 0;
     }
 
@@ -488,11 +513,7 @@ h2, .categoria h2, .categoria h3 {
     }
 
     .nav-links {
-        gap: 6px;
-    }
-
-    .nav-links a {
-        font-size: 0.64rem;
+        display: none;
     }
 
     .user-avatar {
@@ -537,6 +558,7 @@ h2, .categoria h2, .categoria h3 {
     }
 
     .movie-roll {
-        gap: 8px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
     }
 }

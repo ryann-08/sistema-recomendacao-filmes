@@ -115,16 +115,8 @@ function mostrar() {
   const painelAberto = hudPanel.style.display === 'block';
  
   // O anti-bolha so pode entrar a cada 3 filmes assistidos:
-  //  - assistidos > 0        : nao entra antes do primeiro clique
-  //  - assistidos % 3 === 0  : entra no 3, 6, 9... (% = resto da divisao)
   const permitir = assistidos > 0 && assistidos % 3 === 0;
  
-  // Chama a funcao do Felipe com:
-  //  1) o perfil atual (do perfil.js do Ryan)
-  //  2) o catalogo (do Matheus)
-  //  3) o ultimo ajuste do perfil (para o HUD)
-  //  4) se o anti-bolha pode entrar agora
-  // Ela devolve { recomendacoes, hud }. As chaves { } extraem as duas.
   const { recomendacoes, hud } = atualizarRecomendacoes(
     obterPerfilAtual(),
     catalogo,
@@ -133,14 +125,11 @@ function mostrar() {
   );
  
   // Apaga o conteudo da caixa de recomendados.
-  // Na primeira vez, remove os quadrados brancos de placeholder.
   caixa.innerHTML = '';
  
   // Para cada filme recomendado, cria um cartaz na caixa
   recomendacoes.forEach(r => {
- 
     // Acha o cartaz original desse filme pelo id
-    // (o data-id do HTML e igual ao id do catalogo)
     const original = document.querySelector(`.movie-card[data-id="${r.id}"]`);
  
     // Se nao achar o cartaz, pula esse filme
@@ -155,16 +144,17 @@ function mostrar() {
     // Mesma classe dos outros cartazes, para ter o mesmo visual
     img.className = 'movie-card';
  
+    // Define o data-id para o cartaz recomendado herdar a capa e o clique
+    img.setAttribute('data-id', r.id);
+ 
     // Copia a capa do cartaz original
     copiarCapa(img, original);
  
-    // Coloca a imagem na caixa de recomendados (agora aparece na tela)
+    // Coloca a imagem na caixa de recomendados
     caixa.appendChild(img);
   });
  
-  // Monta o texto do perfil, ex: "Terror: 3.00 | Comedia: 1.00 | ..."
-  // Object.entries vira lista de pares [genero, valor]; map escreve
-  // "genero: valor"; join junta tudo com " | ".
+  // Monta o texto do perfil
   const notas = Object.entries(hud.perfil)
     .map(([genero, valor]) => `${genero}: ${valor}`)
     .join(' | ');
@@ -179,6 +169,7 @@ function mostrar() {
     hudPanel.style.display = 'block';
   }
 }
+
 // ---------------------------------------------------------------------
 // PARTE 7: CLICAR NUM CARTAZ = "ASSISTIU O FILME"
 // Para cada um dos 20 cartazes, ficamos "escutando" o clique.

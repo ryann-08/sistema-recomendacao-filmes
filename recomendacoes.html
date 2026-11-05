@@ -10,18 +10,24 @@
     <div id="topo"></div>
 
     <!-- MENU DE NAVEGAÇÃO SUPERIOR (Navbar) -->
-    <header class="navbar">
+   <header class="navbar">
         <div class="nav-left">
             <span class="nav-logo-text">MALAFLIX</span>
             <nav class="nav-links">
                 <a href="#" class="active">Início</a>
                 <a href="#">Filmes</a>
                 <a href="#">Minha Lista</a>
-                <a href="index.html">Voltar</a>
             </nav>
         </div>
+
         <!-- PERFIL E PAINEL DE ESTATÍSTICAS (HUD) -->
-        <div class="nav-right">
+        <div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
+            <!-- Botão Voltar fixo que não desaparece no telemóvel -->
+            <a href="index.html" class="btn-voltar" style="padding: 6px 14px; font-size: 13px; text-decoration: none;">Voltar</a>
+
+            <!-- Botão de ir para os recomendados -->
+            <a href="#recomendados-roll" class="btn-voltar" style="padding: 6px 14px; font-size: 13px; text-decoration: none;">Ver Recomendações</a>
+
             <div class="user-profile-wrapper" style="position: relative;">
                 <div class="user-avatar" id="btn-perfil" style="cursor: pointer;" title="Ver Estatísticas do Perfil">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -29,7 +35,7 @@
                     </svg>
                 </div>
 
-                <!-- O painel de estatísticas agora fica aqui em cima, escondido por padrão -->
+                <!-- O painel de estatísticas -->
                 <div id="hud-panel" class="hud-dropdown" style="display: none;"></div>
             </div>
         </div>
@@ -76,16 +82,16 @@
         </div>
     </div>
 
-    <!-- CAIXA DOS RECOMENDADOS (6 cartazes, sem data-id, controlada pelo JS) -->
+   <!-- CAIXA DOS RECOMENDADOS (6 espaços preparados para o JS preencher) -->
     <div class="categoria"> 
         <h2>Filmes recomendados</h2>
         <div class="movie-roll" id="recomendados-roll"> 
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card"> 
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
-            <img src="https://via.placeholder.com/114x171" alt="cartaz recomendado" class="movie-card">
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 1" class="movie-card" data-rec-placeholder="true"> 
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 2" class="movie-card" data-rec-placeholder="true">
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 3" class="movie-card" data-rec-placeholder="true">
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 4" class="movie-card" data-rec-placeholder="true">
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 5" class="movie-card" data-rec-placeholder="true">
+            <img src="https://via.placeholder.com/114x171" alt="recomendado 6" class="movie-card" data-rec-placeholder="true">
         </div>
     </div>
 
